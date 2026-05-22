@@ -12,7 +12,7 @@ myDB = mysql.connector.connect(
     host='localhost',
     database='bullsandcowsschema',
     user='root',
-    password='Mk$#032375'
+    password='password'
 )
 
 
