@@ -1,0 +1,18 @@
+CREATE DATABASE IF NOT EXISTS bullsandcowsschema;
+
+USE bullsandcowsschema;
+
+CREATE TABLE IF NOT EXISTS game (
+    gameId INT AUTO_INCREMENT PRIMARY KEY,
+    answer VARCHAR(4) NOT NULL,
+    status VARCHAR(20) NOT NULL DEFAULT 'In Progress'
+);
+
+CREATE TABLE IF NOT EXISTS rounds (
+    roundId INT AUTO_INCREMENT PRIMARY KEY,
+    gameId INT NOT NULL,
+    guess VARCHAR(4) NOT NULL,
+    time VARCHAR(50) NOT NULL,
+    result VARCHAR(20) NOT NULL,
+    FOREIGN KEY (gameId) REFERENCES game (gameId) ON DELETE CASCADE
+);
